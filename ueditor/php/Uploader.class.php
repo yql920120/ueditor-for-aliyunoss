@@ -154,7 +154,7 @@ class Uploader
             $this->fileName = $upload->file_name;
             /* 上传成功存入数据库 start  */
             define('InCosmos',true);
-            //定义我的PDO
+            //定义我的PDO  // 请按照你自己的 数据库配置 PDO
             define("HOST","localhost");
             define("USER","root");
             define("PASS","root");
@@ -162,7 +162,8 @@ class Uploader
             define("TABPREFIX","33hao_");
             define("DEBUG","0");
 
-            $pdo_path = $_SERVER['DOCUMENT_ROOT'].DS."core".DS."framework".DS."libraries".DS."dpdo.php";
+            // 这里请注意 你自己下来下来的PDO 插件的路径  我的是按照 自己的框架 调用的  你可以做相应的修改
+            $pdo_path = $_SERVER['DOCUMENT_ROOT'].DS."pdo".DS."dpdo.php";
             include_once($pdo_path);
             $db_ueditor = new Dpdo();
             $db_ueditor->setTable("bbs_ueditor_pic");
